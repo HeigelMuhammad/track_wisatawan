@@ -1,9 +1,9 @@
 <?php
-$host     = getenv('gateway01.ap-southeast-1.prod.aws.tidbcloud.com');
-$dbname   = getenv('db_track_wisatawan');
-$username = getenv('3Y6u44EkUgnN9ok.root');
-$password = getenv('KBhvnQ4LJkwJQm0t');
-$port     = getenv('4000');
+$host     = getenv('TIDB_HOST');
+$port     = getenv('TIDB_PORT');
+$dbname   = getenv('TIDB_DATABASE');
+$username = getenv('TIDB_USER');
+$password = getenv('TIDB_PASSWORD');
 
 try {
     $pdo = new PDO(
