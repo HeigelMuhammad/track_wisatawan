@@ -1,6 +1,6 @@
 <?php
 // Mengambil data kredensial TiDB dari Vercel Environment Variables
-<?php
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
