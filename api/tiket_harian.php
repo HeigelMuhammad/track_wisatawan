@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 // Gunakan slash
 
 require_once __DIR__ . '/api_tiket.php'; 
