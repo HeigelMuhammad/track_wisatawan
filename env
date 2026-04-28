@@ -1,0 +1,5 @@
+TIDB_HOST=gateway01.ap-southeast-1.prod.aws.tidbcloud.com
+TIDB_PORT=4000
+TIDB_USER=3Y6u44EkUgnN9ok.root
+TIDB_PASSWORD=KBhvnQ4LJkwJQm0t
+TIDB_DATABASE=db_track_wisatawan
