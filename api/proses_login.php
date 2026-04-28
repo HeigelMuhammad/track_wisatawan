@@ -17,19 +17,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$email]);
         $user = $stmt->fetch();
 
-        if ($user && password_verify($password, $user['password'])) 
-            {
+        // Pengecekan password
+        if ($user && password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['nama']    = $user['nama'];
             $_SESSION['email']   = $user['email'];
             $_SESSION['role']    = $user['role'];
 
-            if (strtolower($user['role']) === 'admin') {
-                header('Location: tiket_harian.php');
-            } else {
-                header('Location: tiket.php');
+            $target_url = (strtolower($user['role']) === 'admin') ? 'tiket_harian.php' : 'tiket.php';
+            
+            if (!headers_sent()) {
+                header("Location: " . $target_url);
             }
+            // Jika PHP Header gagal, Javascript yang akan mengambil alih redirect-nya
+            echo "<script>window.location.href='" . $target_url . "';</script>";
             exit;
+            
         } else {
             $error = 'Email atau password salah!';
         }
