@@ -48,7 +48,7 @@ if (!isset($_COOKIE['role']) || $_COOKIE['role'] !== 'admin') {
         <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3">
             <div>
                 <h1 class="page-title">Dashboard <span>Admin</span></h1>
-                <p style="color:rgba(255,255,255,.45);font-size:.88rem;">Selamat datang, <?= htmlspecialchars($_SESSION['nama'] ?? $_SESSION['username'] ?? 'Admin') ?></p>
+                <p style="color:rgba(255,255,255,.45);font-size:.88rem;">Selamat datang, <?= htmlspecialchars($_COOKIE['nama'] ?? 'Admin') ?></p>
             </div>
         </div>
 
