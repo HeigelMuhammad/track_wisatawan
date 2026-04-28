@@ -1,5 +1,7 @@
 <?php
-session_start(); // WAJIB ADA
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require_once 'koneksi.php';
 
 if (!isset($_SESSION['user_id'])) {
