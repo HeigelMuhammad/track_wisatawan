@@ -3,7 +3,7 @@ session_start();
 // Gunakan slash
 
 require_once __DIR__ . '/api_tiket.php'; 
-require_once __DIR__ . '/Proses_tiket_harian.php'; 
+require_once __DIR__ . '/proses_tiket_harian.php'; 
 
 
 // Hapus atau perbaiki logika ini. 
